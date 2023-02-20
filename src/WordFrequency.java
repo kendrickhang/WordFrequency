@@ -49,6 +49,7 @@ public class WordFrequency {
         int max = 0;
         //new map to store highest value/values
         Map<String, Integer> maxMap = new HashMap<>();
+        //iterate through the map to find the highest frequency word or words
         for(String key : thisMap.keySet()){
             //if current word has HIGHER value than previous max, reset the maxMap and put the new values
             if(thisMap.get(key) > max){
@@ -97,8 +98,4 @@ public class WordFrequency {
         //call to findMax that will print out the most frequently used word/words
         findMax(wordMap);
     }
-
-
-
-
 }
