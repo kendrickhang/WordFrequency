@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /**
  * @author Katherine Watkins
@@ -19,7 +20,7 @@ public class WordFrequency {
      */
     public static Map<String, Integer> wordFrequency(String fileName) {
         //map to store each word and it's frequency
-        Map<String, Integer> wordMap = new HashMap<>();
+        Map<String, Integer> wordMap = new TreeMap<>();
         //scanner in a try catch for FileNotFoundException
         try (Scanner s = new Scanner(new File(fileName))) {
             while (s.hasNext()) {
@@ -90,7 +91,7 @@ public class WordFrequency {
 
     public static void main(String[] args) {
         //frequency Map stored in variable
-        Map<String, Integer> wordMap = wordFrequency("tinyTale.txt");
+        Map<String, Integer> wordMap = wordFrequency("tale.txt");
         //for loop to print out each word and it's frequency
         for(String key : wordMap.keySet()){
             System.out.println(key + " appears " + wordMap.get(key) + " times");
