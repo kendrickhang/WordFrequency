@@ -35,7 +35,6 @@ public class WordFrequency {
             }else {
                 //put word into the map
                 files.put(word,1);
-
             }
 
         }//end of While loop
