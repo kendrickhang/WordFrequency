@@ -1,3 +1,4 @@
+import java.lang.constant.Constable;
 import java.util.*;
 import java.io.*;
 
@@ -6,10 +7,9 @@ public class WordFrequency {
         String file1 = "tinyTale.txt";
         String file2 = "tale.txt";
 
-        //Map of all words appeared in files
-        System.out.println("Map of " + file1 + " file: " + countWords("333/WordFrequency/" + file1));
-        System.out.println("Map of " + file2 + " file: " + countWords("333/WordFrequency/" + file2));
-
+        //This method will print out all word and appeared time in the file
+        eachWordCount(file1);
+        eachWordCount(file2);
         //This will print out the most frequent word in the files
         System.out.println(mostAppearWord(file1));
         System.out.println(mostAppearWord(file2));
@@ -48,5 +48,20 @@ public class WordFrequency {
             }
         }
         return "The word \"" + wordMostAppear + "\" is the most appeared in " + fileName + " file with " + mostAppeared + " times.";
+    }
+
+    public static void eachWordCount(String fileName){
+        Map<String, Integer> wordsCount = countWords("333/WordFrequency/" + fileName);
+        System.out.println(fileName + " file has: ");
+        for (Map.Entry<String, Integer> entry : wordsCount.entrySet()) {
+            String time = "";
+            if (entry.getValue() == 1) {
+                time = " time.";
+            } else {
+                time = " times.";
+            }
+            System.out.println("The word \"" + entry.getKey() + "\" appeared " + entry.getValue() + time);
+        }
+        System.out.println("-----------------------------------------------------------------------------------");
     }
 }
