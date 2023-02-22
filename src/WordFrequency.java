@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-public class WordFrequency {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-=======
+
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Map;
@@ -35,6 +32,7 @@ public class WordFrequency {
             }else {
                 //put word into the map
                 files.put(word,1);
+
             }
 
         }//end of While loop
@@ -51,9 +49,5 @@ public class WordFrequency {
             System.out.println(value);
         }
         //cant look at value to get the key. only at key to get the value
-
-
-
->>>>>>> 3e47cf5 (Initial commit)
     }
 }
